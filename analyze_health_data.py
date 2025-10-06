@@ -43,9 +43,9 @@ def calculate_statistics(data):
     # TODO: Calculate average glucose level using data['glucose_level'].mean()
     # TODO: Return as dictionary with keys: 'avg_heart_rate', 'avg_systolic_bp', 'avg_glucose'
     dictionary = {
-        "avg_heart_rate": data['heart_rate'].mean(),
-        "avg_systolic_bp": data['blood_pressure_systolic'].mean(),
-        "avg_glucose": data['glucose_level'].mean()
+        "avg_heart_rate": f"{data['heart_rate'].mean():.1f}",
+        "avg_systolic_bp": f"{data['blood_pressure_systolic'].mean():.1f}",
+        "avg_glucose": f"{data['glucose_level'].mean():.1f}"
     }
     return dictionary
 
@@ -99,9 +99,9 @@ def generate_report(stats, abnormal, total_readings):
         "----------------------------------\n"
         f"Total Readings: {total_readings}\n\n"
         "Average Values:\n"
-        f"- Heart Rate: {stats['avg_heart_rate']:.1f} bpm\n"
-        f"- Systolic Blood Pressure: {stats['avg_systolic_bp']:.1f} mmHg\n"
-        f"- Glucose Level: {stats['avg_glucose']:.1f} mg/dL\n\n"
+        f"- Heart Rate: {stats['avg_heart_rate']} bpm\n"
+        f"- Systolic Blood Pressure: {stats['avg_systolic_bp']} mmHg\n"
+        f"- Glucose Level: {stats['avg_glucose']} mg/dL\n\n"
         "Number of Abnormal Readings:\n"
         f"- High Heart Rate (>90 bpm): {abnormal['high_heart_rate']}\n"
         f"- High Systolic Blood Pressure (>130 mmHg): {abnormal['high_blood_pressure']}\n"
